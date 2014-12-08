@@ -1,0 +1,10 @@
+{ "name": "Security Webapplicaties",
+  "sections": [
+    {"section":"intro"},
+    {"section": "SQL-injection"},
+    {"section": "XSS"},
+    {"section": "CSFR"},
+    {"section": "DDOS"},
+    {"section": "Timing Attacks"}
+  ]
+}
