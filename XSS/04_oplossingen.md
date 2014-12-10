@@ -29,29 +29,6 @@
 * CSS templates (LESS)
 
 !SLIDE bullets incremental
-# Oplossingen #
-## Prepared Statement ##
-
-    @@@sql
-    PREPARE user (int) AS
-      SELECT * FROM users WHERE id = $1);
-
-    EXECUTE user(1);
-
-!SLIDE bullets incremental
-# Oplossingen #
-## Escapen ##
-* Gebruik een ORM of Datbase-abstractielaag.
-* Vervang bijvoorbeeld `'` met `\'`. *en meer*
-
-!SLIDE bullets incremental
-# Oplossingen #
-## Permissies op Database ##
-
-* CMS met user `drupal_cms` heeft schrijfrechten.
-* frontend met user `drupal_frontend` heeft read-only rechten.
-
-!SLIDE bullets incremental
 # Oplossingen Architectuur #
 * Laat rendering engine standaard escapen.
 * Stuur de escape-status van variabelen mee.
