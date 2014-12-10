@@ -68,6 +68,8 @@ Nu aangeroepen met: `http://www.some.site/page.html?default=<script>alert(docume
 # mXSS mutation XSS #
 ![Einde der tijden](laatste_oordeel.jpg)
 
+!SLIDE bullets incremental
+# mXSS mutation XSS #
 * Gebruikt innerHTML om ge-escapete code te ont-escapen.
 * Alle Browserbouwers gingen al de mist in.
 * Extra voorzichtig met WYSIWYG-editors, SVG, MathML en CDATA.
