@@ -3,7 +3,7 @@
     {"section":"intro"},
     {"section": "SQL-injection"},
     {"section": "XSS"},
-    {"section": "CSFR"},
+    {"section": "CSRF"},
     {"section": "DDOS"},
     {"section": "Timing-Attacks"}
   ]
