@@ -70,7 +70,7 @@ Good:
 
     @@@PHP
     <?php r($insecure); ?>
-    <?php r($was_it_already_sanitized?); ?>
+    <?php r($was_it_already_sanitized); ?>
 
 !SLIDE code
 Bad:
@@ -85,19 +85,24 @@ Bad:
 Good:
 
     @@@PHP
-    $username = current_user()->name;
-    $message = t('Successfully logged in %user', $username);
-
     <?php print check_plain($username); ?>
     <?php print check_plain($message); ?>
 
 !SLIDE code
-Better:
-
+Beter:
 
     @@@PHP
-    $username = current_user()->name;
-    $message = t('Successfully logged in %user', $username);
-
     <?php r($username); ?>
     <?php r($message); ?>
+
+!SLIDE code
+
+   @@@PHP
+   class View {
+      function r($renderable) {
+        if (!$renderable->is_sanitized()) {
+          Sanitizer->sanitize($renderable);
+        }
+        print $renderable->content;
+      }
+    }
