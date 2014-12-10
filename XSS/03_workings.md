@@ -36,7 +36,8 @@
 # Reflected #
 
     @@@ruby
-    "Please check the confirmation at %{email}"
+    "Please check the" +
+    "confirmation at %{email}"
 
 !SLIDE
 # Stored #
