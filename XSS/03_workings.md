@@ -22,7 +22,7 @@
 * Injecteer scripts of andere ongewenste content.
 
 !SLIDE center
-<iframe width="960" height="720" src="//www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allowfullscreen></iframe>
+<iframe width="960" height="720" src="//www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0" frameborder="0" allowfullscreen></iframe>
 
 !SLIDE bullets incremental
 # Soorten #
