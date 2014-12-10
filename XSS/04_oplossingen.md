@@ -74,12 +74,17 @@ Beter:
 
 !SLIDE code
 
-   @@@PHP
-   class View {
+    @@@PHP
+    class View {
       function r($renderable) {
+        if (!$renderable instanceof Renderable)
+          $renderable = \
+            new Renderable($renderable);
+        }
         if (!$renderable->is_sanitized()) {
           Sanitizer->sanitize($renderable);
         }
         print $renderable->content;
+        return $renderable->content;
       }
     }
