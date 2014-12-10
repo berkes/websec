@@ -3,9 +3,9 @@
     {"section":"intro"},
     {"section": "SQL-injection"},
     {"section": "XSS"},
-    {"section": "CSRF"},
+    {"section": "XSRF"},
     {"section": "DDOS"},
-    {"section": "Timing-Attacks"}
+    {"section": "Timing-Attacks"},
     {"section": "colofon"}
   ]
 }
