@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Security Webapplicaties</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+
+  <link rel="stylesheet" href=".//css/reset.css" type="text/css"/>
+
+  
+
+  <link type="text/css" href=".//css/fg.menu.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href=".//css/theme/ui.all.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href=".//css/sh_style.css" rel="stylesheet" />
+  <link type="text/css" href=".//css/tipsy.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href=".//css/showoff.css" type="text/css"/>
+
+  <script type="text/javascript" src=".//js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src=".//js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src=".//js/jquery-print.js"></script>
+  <script type="text/javascript" src=".//js/jquery.batchImageLoad.js"></script>
+  <script type="text/javascript" src=".//js/jquery.parsequery.min.js"></script>
+  <script type="text/javascript" src=".//js/jquery.doubletap-0.1.js"></script>
+  <script type="text/javascript" src=".//js/jquery.tipsy.js"></script>
+
+  <script type="text/javascript" src=".//js/fg.menu.js"></script>
+  <script type="text/javascript" src=".//js/showoff.js"></script>
+  <script type="text/javascript" src=".//js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src=".//js/sh_main.min.js"></script>
+  <script type="text/javascript" src=".//js/core.js"></script>
+  <script type="text/javascript" src=".//js/showoffcore.js"></script>
+  <script type="text/javascript" src=".//js/coffee-script.js"></script>
+
+  
+    
+      <script type="text/javascript" src=".//js/sh_lang/sh_sql.min.js"></script>
+    
+      <script type="text/javascript" src=".//js/sh_lang/sh_php.min.js"></script>
+    
+      <script type="text/javascript" src=".//js/sh_lang/sh_ruby.min.js"></script>
+    
+      <script type="text/javascript" src=".//js/sh_lang/sh_html.min.js"></script>
+    
+      <script type="text/javascript" src=".//js/sh_lang/sh_javascript.min.js"></script>
+    
+  
+
+  
+
+  
+
+  <script type="text/javascript">
+    $(function(){
+      setupPreso(false, './');
+    });
+
+    editUrl  = "";
+  </script>
+
+</head>
+
+<body>
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+<a tabindex="1" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="stylemenu"><span class="ui-icon ui-icon-triangle-1-s"></span>styles</a>
+<div id="stylepicker" class="hidden"></div>
+
+
+<div id="help">
+  <table>
+    <tr><td class="key">z, ?</td><td>toggle help (this)</td></tr>
+    <tr><td class="key">space, &rarr;</td><td>next slide</td></tr>
+    <tr><td class="key">shift-space, &larr;</td><td>previous slide</td></tr>
+    <tr><td class="key">b</td><td>blank screen</td></tr>
+    <tr><td class="key">d</td><td>toggle debug mode</td></tr>
+    <tr><td class="key">## &lt;ret&gt;</td><td>go to slide #</td></tr>
+    <tr><td class="key">c, t</td><td>table of contents (vi)</td></tr>
+    <tr><td class="key">f</td><td>toggle footer</td></tr>
+    <tr><td class="key">g</td><td>toggle follow</td></tr>
+    <tr><td class="key">r</td><td>reload slides</td></tr>
+    <tr><td class="key">n</td><td>toggle notes</td></tr>
+    <tr><td class="key">p</td><td>run preshow</td></tr>
+    <tr><td class="key">P</td><td>toggle pause</td></tr>
+    <tr><td class="key">s</td><td>choose style</td></tr>
+  </table>
+</div>
+
+<div class="buttonNav">
+  <input type="submit" onClick="prevStep();" value="prev"/>
+  <input type="submit" onClick="nextStep();" value="next"/>
+</div>
+
+<div id="preso"><center>loading presentation...</center></div>
+<div id="footer">
+  <span id="followMode"></span>
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+  <span id="notesInfo"></span>
+  <span id="slideFilename"></span>
+  <img id="disconnected" src=".//css/disconnected.png" />
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div id="intro_01_titel" class="slide center" data-transition="none">
+<div class="content center" ref="intro/01_titel">
+<h1>Security in Webapplicaties</h1>
+
+<h2>Drupal Tech Talk</h2>
+
+<h2>11 December 2014, Maarssen</h2>
+</div>
+</div>
+<div id="intro_02_over" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="intro/02_over/1">
+<h1>Over</h1>
+
+<ul>
+<li>Bèr Kessels</li>
+<li>@berkes, github.com/berkes</li>
+<li>Senior Ruby Developer bij CO2-Management</li>
+</ul>
+</div>
+</div>
+<div id="intro_02_over" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="intro/02_over/2">
+<h1>Over de presentatie</h1>
+
+<ul>
+<li>Staat op <a href="http://berk.es/websec">berk.es/websec</a>
+</li>
+<li>Github: <a href="http://github.com/berkes/websec">github.com/berkes/websec</a>
+</li>
+<li>Heeft Pseudocode in Ruby</li>
+<li>Heeft focus op Architecture</li>
+</ul>
+</div>
+</div>
+<div id="intro_02_over" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="intro/02_over/3">
+<h1>Over mij</h1>
+
+<ul>
+<li>
+<strong>Member for</strong>  13 years 8 months</li>
+<li>Code Architect.</li>
+<li>Heeft veel security-reviews gedaan.</li>
+<li>Kan altijd een veiligheidslek vinden in je Drupalcode.</li>
+</ul>
+</div>
+</div>
+<div id="intro_04_inhoud" class="slide bullets" data-transition="none">
+<div class="content bullets" ref="intro/04_inhoud">
+<ul>
+<li>SQL-injection</li>
+<li>XSS</li>
+<li>CSFR</li>
+<li>DDOS</li>
+<li>Timing Attacks</li>
+</ul>
+</div>
+</div>
+<div id="SQL-injection_01_title" class="slide " data-transition="none">
+<div class="content " ref="SQL-injection/01_title">
+<h1>SQL-injection</h1>
+</div>
+</div>
+<div id="SQL-injection_02_intro" class="slide small" data-transition="none">
+<div class="content small" ref="SQL-injection/02_intro">
+<blockquote>
+<p>SQL-injectie kan gebeuren als invoer van gebruikers op onvoldoende gecontroleerde wijze wordt 
+verwerkt in een SQL-statement. Om de precieze werking van SQL-injectie te begrijpen is het
+belangrijk om te weten hoe SQL werkt.</p>
+</blockquote>
+
+<div class="notes">
+
+<p>Vraag: wie weet wat SQL is?</p>
+
+</div>
+</div>
+</div>
+<div id="SQL-injection_03_workings" class="slide image" data-transition="none">
+<div class="content image" ref="SQL-injection/03_workings/1">
+<h1>Werking</h1>
+
+<p><img src="./file/SQL-injection/post.jpg" alt="POST"></p>
+</div>
+</div>
+<div id="SQL-injection_03_workings" class="slide code" data-transition="none">
+<div class="content code" ref="SQL-injection/03_workings/2">
+<pre class="sh_sql"><code>UPDATE users
+  SET
+    (email = 'ber@berk.es')
+  WHERE id = 1337</code></pre>
+</div>
+</div>
+<div id="SQL-injection_03_workings" class="slide code" data-transition="none">
+<div class="content code" ref="SQL-injection/03_workings/3">
+<pre class="sh_php"><code>"UPDATE users
+ SET
+  (email = '{$POST["email"]}'
+  WHERE id = {current_user()-&gt;id}"
+
+
+$email = $POST["email"];
+$id = current_user()-&gt;id;
+"UPDATE users
+ SET
+  (email = '{$email}'
+  WHERE id = {$id}"</code></pre>
+</div>
+</div>
+<div id="SQL-injection_03_workings" class="slide code" data-transition="none">
+<div class="content code" ref="SQL-injection/03_workings/4">
+<pre class="sh_php"><code>$POST['email'] =
+  "ber@berk.es', role = 'admin"</code></pre>
+
+<p>wordt:</p>
+
+<pre class="sh_sql"><code>UPDATE users
+  SET
+    (email = 'ber@berk.es', role = 'admin')
+  WHERE id = 1337</code></pre>
+</div>
+</div>
+<div id="SQL-injection_03_workings" class="slide code" data-transition="none">
+<div class="content code" ref="SQL-injection/03_workings/5">
+<pre class="sh_php"><code>"SELECT * FROM articles
+ LIMIT({$per_page}, {$page})"</code></pre>
+
+<p>met: <a href="http://example.com/articles?page=12">http://example.com/articles?page=12</a></p>
+
+<pre class="sh_php"><code>$page = 
+  "12); DROP TABLE payments WHERE (1=1"
+$page =
+  "13) INTO OUTFILE '/uploads/data.txt'"</code></pre>
+</div>
+</div>
+<div id="SQL-injection_04_oplossingen" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="SQL-injection/04_oplossingen/1">
+<h1>Oplossingen</h1>
+
+<ul>
+<li>ORM</li>
+<li>Prepared Statements</li>
+<li>Escapen</li>
+<li>Permissions op Database</li>
+</ul>
+</div>
+</div>
+<div id="SQL-injection_04_oplossingen" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="SQL-injection/04_oplossingen/2">
+<h1>Oplossingen</h1>
+
+<h2>ORM, database abstractielaag</h2>
+
+<pre class="sh_ruby"><code>user = User.find(1337)
+user.update_attributes(email: email)
+
+Account.where('name LIKE ?', pattern)</code></pre>
+</div>
+</div>
+<div id="SQL-injection_04_oplossingen" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="SQL-injection/04_oplossingen/3">
+<h1>Oplossingen</h1>
+
+<h2>Prepared Statement</h2>
+
+<pre class="sh_sql"><code>PREPARE user (int) AS
+  SELECT * FROM users WHERE id = $1);
+
+EXECUTE user(1);</code></pre>
+</div>
+</div>
+<div id="SQL-injection_04_oplossingen" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="SQL-injection/04_oplossingen/4">
+<h1>Oplossingen</h1>
+
+<h2>Escapen</h2>
+
+<ul>
+<li>Gebruik een ORM of Datbase-abstractielaag.</li>
+<li>Vervang bijvoorbeeld <code>'</code> met ``. <em>en meer</em>
+</li>
+</ul>
+</div>
+</div>
+<div id="SQL-injection_04_oplossingen" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="SQL-injection/04_oplossingen/5">
+<h1>Oplossingen</h1>
+
+<h2>Permissies op Database</h2>
+
+<ul>
+<li>CMS met user <code>drupal_cms</code> heeft schrijfrechten.</li>
+<li>frontend met user <code>drupal_frontend</code> heeft read-only rechten.</li>
+</ul>
+</div>
+</div>
+<div id="SQL-injection_04_oplossingen" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="SQL-injection/04_oplossingen/6">
+<h1>Oplossingen Architectuur</h1>
+
+<ul>
+<li>Zorg voor een goed, veelgebruikt ORM.</li>
+<li>Druk dit zo laag mogelijk de stack in.</li>
+<li>Maak het moeilijk om fout te doen en makkelijk om goed te doen.</li>
+<li>Zorg voor één, voorspelbare plek.</li>
+</ul>
+</div>
+</div>
+<div id="XSS_01_title" class="slide " data-transition="none">
+<div class="content " ref="XSS/01_title">
+<h1>XSS, Cross Site Scripting</h1>
+</div>
+</div>
+<div id="XSS_02_intro" class="slide small" data-transition="none">
+<div class="content small" ref="XSS/02_intro">
+<blockquote>
+<p>Het probleem wordt veroorzaakt doordat de invoer die de webapplicatie ontvangt (zoals cookie, url, request parameters) niet juist wordt verwerkt en hierdoor in de uitvoer terecht komt naar de eindgebruiker.</p>
+</blockquote>
+
+<div class="notes">
+
+<p>Vraag: wie weet wat JavaScript kan doen?</p>
+
+</div>
+</div>
+</div>
+<div id="XSS_03_workings" class="slide image" data-transition="none">
+<div class="content image" ref="XSS/03_workings/1">
+<h1>Werking</h1>
+
+<p><img src="./file/XSS/rendering.jpg" alt="rendering"></p>
+
+<pre class="sh_php"><code>&lt;i&gt;&lt;?php print $email ?&gt;&lt;/i&gt;</code></pre>
+</div>
+</div>
+<div id="XSS_03_workings" class="slide code" data-transition="none">
+<div class="content code" ref="XSS/03_workings/2">
+<pre class="sh_html"><code>ber@berk.es&lt;/i&gt;&lt;script&gt;
+var xhr = new XMLHttpRequest();
+xhr.open("POST", "/account", true);
+xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhr.send("password=compromised");
+&lt;/script&gt;&lt;i&gt;</code></pre>
+</div>
+</div>
+<div id="XSS_03_workings" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="XSS/03_workings/3">
+<h1>Werking</h1>
+
+<ul>
+<li>Injecteer scripts of andere ongewenste content.</li>
+</ul>
+</div>
+</div>
+<div id="XSS_03_workings" class="slide center" data-transition="none">
+<div class="content center" ref="XSS/03_workings/4">
+<iframe width="960" height="720" src="//www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<div id="XSS_03_workings" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="XSS/03_workings/5">
+<h1>Soorten</h1>
+
+<ul>
+<li>Reflected, None-persistent XSS</li>
+<li>Stored, Persistent XSS</li>
+<li>DOM based XSS</li>
+<li>mXSS of mutation XSS</li>
+</ul>
+</div>
+</div>
+<div id="XSS_03_workings" class="slide " data-transition="none">
+<div class="content " ref="XSS/03_workings/6">
+<h1>Reflected</h1>
+
+<pre class="sh_ruby"><code>"Please check the" +
+"confirmation at %{email}"</code></pre>
+</div>
+</div>
+<div id="XSS_03_workings" class="slide " data-transition="none">
+<div class="content " ref="XSS/03_workings/7">
+<h1>Stored</h1>
+
+<pre class="sh_ruby"><code>msg = "Users with changed emails:&lt;br&gt;"
+User.updated(2.days.ago).each do |user|
+  msg += "* %{user.email}&lt;br&gt;"
+end</code></pre>
+</div>
+</div>
+<div id="XSS_03_workings" class="slide " data-transition="none">
+<div class="content " ref="XSS/03_workings/8">
+<h1>DOM based</h1>
+
+<pre class="sh_html"><code>&lt;select&gt;&lt;script&gt;
+document.write("&lt;OPTION value=1&gt;"
+  +document.location.href.substring(
+    document.location.href.indexOf("default=")
+  +8)+"&lt;/OPTION&gt;");
+document.write("&lt;OPTION value=2&gt;English&lt;/OPTION&gt;");
+&lt;/script&gt;&lt;/select&gt;</code></pre>
+
+<p>Normaal aangeroepen met: <code>http://www.some.site/page.html?default=French</code></p>
+
+<p>Nu aangeroepen met: <code>http://www.some.site/page.html?default=&lt;script&gt;alert(document.cookie)&lt;/script&gt;</code></p>
+</div>
+</div>
+<div id="XSS_03_workings" class="slide image" data-transition="none">
+<div class="content image" ref="XSS/03_workings/9">
+<h1>mXSS mutation XSS</h1>
+
+<p><img src="./file/XSS/laatste_oordeel.jpg" alt="Einde der tijden"></p>
+</div>
+</div>
+<div id="XSS_03_workings" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="XSS/03_workings/10">
+<h1>mXSS mutation XSS</h1>
+
+<ul>
+<li>Gebruikt innerHTML om ge-escapete code te ont-escapen.</li>
+<li>Alle Browserbouwers gingen al de mist in.</li>
+<li>Extra voorzichtig met WYSIWYG-editors, SVG, MathML en CDATA.</li>
+</ul>
+</div>
+</div>
+<div id="XSS_04_oplossingen" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="XSS/04_oplossingen/1">
+<h1>Oplossingen</h1>
+
+<ul>
+<li>Escapen en sanitizen</li>
+<li>In rendering laag</li>
+<li>HTTP-only cookies</li>
+<li>Spagetti vermijden</li>
+</ul>
+</div>
+</div>
+<div id="XSS_04_oplossingen" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="XSS/04_oplossingen/2">
+<h1>Oplossingen</h1>
+
+<ul>
+<li><code>htmlspecialchars($email)</code></li>
+</ul>
+</div>
+</div>
+<div id="XSS_04_oplossingen" class="slide code" data-transition="none">
+<div class="content code" ref="XSS/04_oplossingen/3">
+<pre class="sh_php"><code>&lt;?php print htmlspecialchars($email) ?&gt;
+
+@@@php
+$message = "Please check &lt;i&gt;{$email}&lt;/i&gt;";
+print htmlspecialchars($message);
+#=&gt; Please check &amp;lt;i&amp;gt;example@example.com&amp;lt;/i&amp;gt;</code></pre>
+</div>
+</div>
+<div id="XSS_04_oplossingen" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="XSS/04_oplossingen/4">
+<h1>Oplossingen</h1>
+
+<ul>
+<li>HTML-builders (HAML, SLIM, Markdown)</li>
+<li>Parse ook attributen</li>
+<li>Parse vooral ook data-attributen</li>
+<li>JSON-builders (NIET: <code>json_encode</code>)</li>
+<li>Javascript templates (coffee)</li>
+<li>CSS templates (LESS)</li>
+</ul>
+</div>
+</div>
+<div id="XSS_04_oplossingen" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="XSS/04_oplossingen/5">
+<h1>Oplossingen Architectuur</h1>
+
+<ul>
+<li>Laat rendering engine standaard escapen.</li>
+<li>Stuur de escape-status van variabelen mee.</li>
+<li>Maak onmogelijk om <code>print</code>, <code>echo</code> e.d aan te roepen.</li>
+<li>Maak het makkelijk om het goed te doen en moeilijk om het fout te
+doen.</li>
+</ul>
+</div>
+</div>
+<div id="XSS_04_oplossingen" class="slide code" data-transition="none">
+<div class="content code" ref="XSS/04_oplossingen/6">
+<p>Bad:</p>
+
+<pre class="sh_php"><code>&lt;?php print $insecure; ?&gt;</code></pre>
+
+<p>Good:</p>
+
+<pre class="sh_php"><code>&lt;?php r($insecure); ?&gt;
+&lt;?php r($was_it_already_sanitized); ?&gt;</code></pre>
+</div>
+</div>
+<div id="XSS_04_oplossingen" class="slide code" data-transition="none">
+<div class="content code" ref="XSS/04_oplossingen/7">
+<p>Bad:</p>
+
+<pre class="sh_php"><code>$username = current_user()-&gt;name;
+$message = t('Successfully logged in %user', $username);
+
+&lt;?php print check_plain($username); ?&gt;
+&lt;?php print $message; ?&gt;</code></pre>
+
+<p>Good:</p>
+
+<pre class="sh_php"><code>&lt;?php print check_plain($username); ?&gt;
+&lt;?php print check_plain($message); ?&gt;</code></pre>
+</div>
+</div>
+<div id="XSS_04_oplossingen" class="slide code" data-transition="none">
+<div class="content code" ref="XSS/04_oplossingen/8">
+<p>Beter:</p>
+
+<pre class="sh_php"><code>&lt;?php r($username); ?&gt;
+&lt;?php r($message); ?&gt;</code></pre>
+</div>
+</div>
+<div id="XSS_04_oplossingen" class="slide code" data-transition="none">
+<div class="content code" ref="XSS/04_oplossingen/9">
+<pre class="sh_php"><code>class View {
+  function r($renderable) {
+    if (!$renderable instanceof Renderable)
+      $renderable = \
+        new Renderable($renderable);
+    }
+    if (!$renderable-&gt;is_sanitized()) {
+      Sanitizer-&gt;sanitize($renderable);
+    }
+    print $renderable-&gt;content;
+    return $renderable-&gt;content;
+  }
+}</code></pre>
+</div>
+</div>
+<div id="XSRF_01_title" class="slide " data-transition="none">
+<div class="content " ref="XSRF/01_title">
+<h1>Cross Site Request Forgery</h1>
+
+<p>(session-riding)</p>
+</div>
+</div>
+<div id="XSRF_02_intro" class="slide small" data-transition="none">
+<div class="content small" ref="XSRF/02_intro">
+<blockquote>
+<p>exploit of a website whereby unauthorized commands are transmitted from a user that the website trusts.
+Unlike cross-site scripting (XSS), which exploits the trust a user has for a particular site, CSRF exploits the trust that a site has in a user's browser.</p>
+</blockquote>
+
+<div class="notes">
+
+<p>Vraag: wie weet welke HTTP verbs er zijn?</p>
+
+</div>
+</div>
+</div>
+<div id="XSRF_03_workings" class="slide image" data-transition="none">
+<div class="content image" ref="XSRF/03_workings/1">
+<h1>Werking</h1>
+
+<p><img src="./file/XSRF/get.jpg" alt="GET"></p>
+
+<p><code>http://example.com/transfer?amount=12&amp;to=1</code></p>
+</div>
+</div>
+<div id="XSRF_03_workings" class="slide code" data-transition="none">
+<div class="content code" ref="XSRF/03_workings/2">
+<pre class="sh_html"><code>&lt;img src="http://example.com/transfer?amount=42&amp;to=1337"/&gt;</code></pre>
+</div>
+</div>
+<div id="XSRF_03_workings" class="slide code" data-transition="none">
+<div class="content code" ref="XSRF/03_workings/3">
+<pre class="sh_javascript"><code>var xhr = new XMLHttpRequest();
+xhr.open("POST", "http://example.com/transfer/", true);
+xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhr.send("amount=42&amp;to=1337");</code></pre>
+</div>
+</div>
+<div id="XSRF_04_oplossingen" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="XSRF/04_oplossingen/1">
+<h1>Oplossingen</h1>
+
+<ul>
+<li>Implementeer GET/POST/PUT/PATCH/DELETE correct.</li>
+<li>Secret Token</li>
+<li>Same origin polcy middels Cookie-to-Header token</li>
+</ul>
+</div>
+</div>
+<div id="XSRF_04_oplossingen" class="slide code" data-transition="none">
+<div class="content code" ref="XSRF/04_oplossingen/2">
+<pre class="sh_ruby"><code>def token
+  env['rack.session'][key] ||= SecureRandom.base64(32)
+end
+
+def tag
+  %Q(&lt;input type="hidden" name="csrftoken" value="{token}" /&gt;)
+end
+
+def call(env)
+  raise InvalidCsrfToken unless env.params[:csrftoken] == token
+end</code></pre>
+</div>
+</div>
+<div id="XSRF_04_oplossingen" class="slide code" data-transition="none">
+<div class="content code" ref="XSRF/04_oplossingen/3">
+<p>Set-Cookie: Csrf-token=i8XNjC4b8KVok4uw5RftR38Wgp2BFwql; expires=Thu, 23-Jul-2015 10:25:33 GMT; Max-Age=31449600; Path=/</p>
+
+<pre class="sh_javascript"><code>var xhr = new XMLHttpRequest();
+xhr.open("POST", "http://example.com/transfer/", true);
+xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhr.setRequestHeader("X-Csrf-Token", "i8XNjC4b8KVok4uw5RftR38Wgp2BFwql");
+xhr.send("amount=42&amp;to=1337");</code></pre>
+</div>
+</div>
+<div id="XSRF_04_oplossingen" class="slide code" data-transition="none">
+<div class="content code" ref="XSRF/04_oplossingen/4">
+<pre class="sh_html"><code>&lt;meta content="intwIVdk5ItyCj+ZdiQpTGBv2UBk4RQ5PwjkslscXig=" name="csrf-token" /&gt;</code></pre>
+
+<p>Uitleesbaar met:</p>
+
+<pre class="sh_javascript"><code>document.getElementsByTagName('meta').item(property='csrf-token');</code></pre>
+</div>
+</div>
+<div id="XSRF_04_oplossingen" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="XSRF/04_oplossingen/5">
+<h1>Extra Oplossingen</h1>
+
+<ul>
+<li>Implementeer fail2ban voor patterns in url.</li>
+<li>CAPTCHAs</li>
+<li>2factor</li>
+</ul>
+</div>
+</div>
+<div id="XSRF_04_oplossingen" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="XSRF/04_oplossingen/6">
+<h1>Geen oplossingen</h1>
+
+<ul>
+<li>referer checking</li>
+<li>POST gebruiken</li>
+</ul>
+</div>
+</div>
+<div id="XSRF_04_oplossingen" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="XSRF/04_oplossingen/7">
+<h1>Oplossingen Architectuur</h1>
+
+<ul>
+<li>Zorg voor XSRF afhandeling in middleware.</li>
+<li>(Zo laag mogelijk in de stack)</li>
+<li>Handel "params" generiek af, of ze nu geparste JSON of form-encoded
+oid zijn.</li>
+<li>Zorg voor goede salt in de randomgenerator (en zorg dat mensen deze
+veranderen)</li>
+<li>Niet limiteren tot formulieren. Binnen een sessie is veel soorten
+interactie mogelijk.</li>
+<li>Bied makkelijke helpers voor hidden forms, meta-tags en js-helpers.</li>
+</ul>
+</div>
+</div>
+<div id="DDOS_01_ddos" class="slide title" data-transition="none">
+<div class="content title" ref="DDOS/01_ddos/1">
+<h1>DDOS</h1>
+
+<p>(extra tijd)</p>
+</div>
+</div>
+<div id="DDOS_01_ddos" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="DDOS/01_ddos/2">
+<h1>DDOS</h1>
+
+<ul>
+<li>Performanceproblemen</li>
+<li>GET met side-effects</li>
+<li>publieke POSTS met zware afhandeling</li>
+<li>HEAD requests fout afhandelen</li>
+</ul>
+</div>
+</div>
+<div id="DDOS_01_ddos" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="DDOS/01_ddos/3">
+<h1>Voorbeelden</h1>
+
+<ul>
+<li>Imagecache</li>
+<li>cron.php</li>
+<li>most-active?name_contains="jan"</li>
+</ul>
+</div>
+</div>
+<div id="Timing-Attacks_o1_timing_attacks" class="slide title" data-transition="none">
+<div class="content title" ref="Timing-Attacks/o1_timing_attacks/1">
+<h1>Timing Attacks</h1>
+
+<p>(extra tijd)</p>
+</div>
+</div>
+<div id="Timing-Attacks_o1_timing_attacks" class="slide code" data-transition="none">
+<div class="content code" ref="Timing-Attacks/o1_timing_attacks/2">
+<pre class="sh_ruby"><code>def password_digest(password)
+  Bcrypt.create(password + SECRET)
+end
+
+def validate_login
+  user = User.find_by(name: params[:username])
+  if user
+    raise InvalidLogin if user.password == password_digest
+  end
+end</code></pre>
+</div>
+</div>
+<div id="Timing-Attacks_o1_timing_attacks" class="slide code" data-transition="none">
+<div class="content code" ref="Timing-Attacks/o1_timing_attacks/3">
+<pre class="sh_ruby"><code>def prevent_access_with_404
+  if current_user.can_read_project?(params[:id])
+    render Project.find(params[:id])
+  else
+    render_404
+  end
+end</code></pre>
+</div>
+</div>
+<div id="Timing-Attacks_o1_timing_attacks" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="Timing-Attacks/o1_timing_attacks/4">
+<h1>Oplossingen</h1>
+
+<pre class="sh_ruby"><code>def validate_login
+  user = User.find_by(
+    name: params[:username]
+    password_digest: params[:password])
+  raise InvalidLogin unless user
+end</code></pre>
+</div>
+</div>
+<div id="Timing-Attacks_o1_timing_attacks" class="slide bullets incremental" data-transition="none">
+<div class="content bullets incremental" ref="Timing-Attacks/o1_timing_attacks/5">
+<h1>Oplossingen</h1>
+
+<ul>
+<li>Randomness</li>
+<li>Pas op met performance optimalisatie.</li>
+<li>Heroden de executiepaden waar informatie kan lekken.</li>
+</ul>
+</div>
+</div>
+<div id="colofon_01_colofon" class="slide bullets" data-transition="none">
+<div class="content bullets" ref="colofon/01_colofon">
+<h1>BEDANKT!</h1>
+
+<ul>
+<li>@berkes, github.com/berkes</li>
+<li>Presentatie <a href="http://berk.es/websec">berk.es/websec</a>
+</li>
+<li>Github: <a href="http://github.com/berkes/websec">github.com/berkes/websec</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="pauseScreen">
+  PAUSED
+</div>
+
+</body>
+</html>
