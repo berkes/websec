@@ -6,5 +6,6 @@
     {"section": "CSRF"},
     {"section": "DDOS"},
     {"section": "Timing-Attacks"}
+    {"section": "colofon"}
   ]
 }
